@@ -565,3 +565,80 @@
 2026-07-29 11:33:44 | PM001 | Employee added: Maria Ionescu
 2026-07-29 11:33:44 | PM001 | Employee added: Maria Ionescu
 2026-07-29 11:33:44 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 12:05:30 | director | Successful login
+2026-07-29 12:05:30 | DIR001 | Employee added: Alex Popescu
+2026-07-29 12:05:30 | PM001 | Employee added: Maria Ionescu
+2026-07-29 12:05:30 | ENG001 | Employee added: Ion Vasile
+2026-07-29 12:05:30 | TH001 | Employee added: Andrei Marin
+2026-07-29 12:05:30 | OP001 | Employee added: Elena Dumitru
+2026-07-29 12:05:30 | SA001 | Employee added: Ioana Radu
+2026-07-29 12:28:01 | director | User logged out
+2026-07-29 12:28:05 | manager | Successful login
+2026-07-29 12:30:21 | manager | User logged out
+2026-07-29 12:30:26 | operator1 | Successful login
+2026-07-29 12:52:15 | operator1 | User logged out
+2026-07-29 12:52:25 | director | Successful login
+2026-07-29 12:59:31 | 32 | Employee added: dasf
+2026-07-29 14:52:56 | director | Failed login attempt
+2026-07-29 14:53:00 | director | Successful login
+2026-07-29 14:53:00 | DIR001 | Employee added: Alex Popescu
+2026-07-29 14:53:00 | PM001 | Employee added: Maria Ionescu
+2026-07-29 14:53:00 | ENG001 | Employee added: Ion Vasile
+2026-07-29 14:53:00 | TH001 | Employee added: Andrei Marin
+2026-07-29 14:53:00 | OP001 | Employee added: Elena Dumitru
+2026-07-29 14:53:00 | SA001 | Employee added: Ioana Radu
+2026-07-29 14:55:35 | PM001 | Employee added: Maria Ionescu
+2026-07-29 14:55:35 | PM001 | Employee added: Maria Ionescu
+2026-07-29 14:55:35 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 14:57:48 | director | Successful login
+2026-07-29 14:57:48 | DIR001 | Employee added: Alex Popescu
+2026-07-29 14:57:48 | PM001 | Employee added: Maria Ionescu
+2026-07-29 14:57:48 | ENG001 | Employee added: Ion Vasile
+2026-07-29 14:57:48 | TH001 | Employee added: Andrei Marin
+2026-07-29 14:57:48 | OP001 | Employee added: Elena Dumitru
+2026-07-29 14:57:48 | SA001 | Employee added: Ioana Radu
+2026-07-29 14:59:33 | director | Successful login
+2026-07-29 14:59:33 | DIR001 | Employee added: Alex Popescu
+2026-07-29 14:59:33 | PM001 | Employee added: Maria Ionescu
+2026-07-29 14:59:33 | ENG001 | Employee added: Ion Vasile
+2026-07-29 14:59:33 | TH001 | Employee added: Andrei Marin
+2026-07-29 14:59:33 | OP001 | Employee added: Elena Dumitru
+2026-07-29 14:59:33 | SA001 | Employee added: Ioana Radu
+2026-07-29 15:00:03 | director | User logged out
+2026-07-29 15:00:11 | andrei.turbinca | Successful login
+2026-07-29 15:00:30 | andrei.turbinca | User logged out
+2026-07-29 15:00:31 | unknown | Failed login attempt
+2026-07-29 15:00:32 | unknown | Failed login attempt
+2026-07-29 15:00:32 | unknown | Failed login attempt
+2026-07-29 15:00:49 | director | Successful login
+2026-07-29 15:00:49 | DIR001 | Employee added: Alex Popescu
+2026-07-29 15:00:49 | PM001 | Employee added: Maria Ionescu
+2026-07-29 15:00:49 | ENG001 | Employee added: Ion Vasile
+2026-07-29 15:00:49 | TH001 | Employee added: Andrei Marin
+2026-07-29 15:00:49 | OP001 | Employee added: Elena Dumitru
+2026-07-29 15:00:49 | SA001 | Employee added: Ioana Radu
+2026-07-29 15:02:25 | director | Successful login
+2026-07-29 15:02:25 | DIR001 | Employee added: Alex Popescu
+2026-07-29 15:02:25 | PM001 | Employee added: Maria Ionescu
+2026-07-29 15:02:25 | ENG001 | Employee added: Ion Vasile
+2026-07-29 15:02:25 | TH001 | Employee added: Andrei Marin
+2026-07-29 15:02:25 | OP001 | Employee added: Elena Dumitru
+2026-07-29 15:02:25 | SA001 | Employee added: Ioana Radu
+2026-07-29 15:03:28 | director | Successful login
+2026-07-29 15:03:28 | DIR001 | Employee added: Alex Popescu
+2026-07-29 15:03:28 | PM001 | Employee added: Maria Ionescu
+2026-07-29 15:03:28 | ENG001 | Employee added: Ion Vasile
+2026-07-29 15:03:28 | TH001 | Employee added: Andrei Marin
+2026-07-29 15:03:28 | OP001 | Employee added: Elena Dumitru
+2026-07-29 15:03:28 | SA001 | Employee added: Ioana Radu
+2026-07-29 15:09:06 | director | Successful login
+2026-07-29 15:09:06 | DIR001 | Employee added: Alex Popescu
+2026-07-29 15:09:06 | PM001 | Employee added: Maria Ionescu
+2026-07-29 15:09:06 | ENG001 | Employee added: Ion Vasile
+2026-07-29 15:09:06 | TH001 | Employee added: Andrei Marin
+2026-07-29 15:09:06 | OP001 | Employee added: Elena Dumitru
+2026-07-29 15:09:06 | SA001 | Employee added: Ioana Radu
+2026-07-29 15:10:06 | director | User logged out
+2026-07-29 15:10:12 | andrei.turbinca | Successful login
+2026-07-29 15:10:36 | andrei.turbinca | User logged out
+2026-07-29 15:10:41 | tech1 | Successful login

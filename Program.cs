@@ -104,9 +104,6 @@ class Program
                 return;
             }
 
-
-            fabrica.ShowMainMenuShareStatus();
-
             switch (rolCurent)
             {
                 case EmployeeRole.Director:
@@ -145,6 +142,8 @@ class Program
     static bool MeniuDirector()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuDirectorEmployees);
         Console.WriteLine(Messages.MenuDirectorMachines);
         Console.WriteLine(Messages.MenuDirectorProducts);
@@ -188,7 +187,10 @@ class Program
                 fabrica.AfiseazaDashboardGestionare();
                 break;
             case "6": ShowOperationLogs(); PauseAndContinue(); break;
-            case "7": fabrica.ListCompanyPubliclyFromConsole(); break;
+            case "7":
+                fabrica.ListCompanyPubliclyFromConsole();
+                PauseAndContinue();
+                break;
             case "8": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -225,6 +227,8 @@ class Program
     static bool MeniuProductionManager1()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuProductionEmployees);
         Console.WriteLine(Messages.MenuProductionMachines);
         Console.WriteLine(Messages.MenuProductionProducts);
@@ -325,6 +329,8 @@ class Program
     static bool MeniuEngineer()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuEngineerTitle);
         Console.WriteLine(Messages.MenuEngineerMaintenance);
         Console.WriteLine(Messages.MenuEngineerHealth);
@@ -348,6 +354,8 @@ class Program
     static bool MeniuTechnician()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuTechnicianTitle);
         Console.WriteLine(Messages.MenuTechnicianShow);
         Console.WriteLine(Messages.MenuTechnicianRepair);
@@ -389,6 +397,8 @@ class Program
     static bool MeniuMachineOperator()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuOperatorProduction);
         Console.WriteLine(Messages.MenuOperatorShowMachines);
         Console.WriteLine(Messages.MenuOperatorStop);
@@ -432,6 +442,8 @@ class Program
     static bool MeniuSalesAgent()
     {
         Console.Clear();
+        Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
+        fabrica.ShowMainMenuShareStatus();
         Console.WriteLine(Messages.MenuSalesAgentTitle);
         Console.WriteLine(Messages.MenuSalesAgentSales);
         Console.WriteLine(Messages.MenuSalesAgentProducts);

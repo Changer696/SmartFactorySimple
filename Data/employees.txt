@@ -20,3 +20,4 @@ ENG001;ion_vasile;pass123;Engineer
 TH001;andrei_marin;pass123;Technician
 OP001;elena_dumitru;pass123;MachineOperator
 3;ga;ga;Technician
+32;andrei.turbinca;pass123;Engineer

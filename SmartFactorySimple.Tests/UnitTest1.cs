@@ -27,6 +27,30 @@ public class FactoryShareTests
     }
 
     [Fact]
+    public void ShowMainMenuShareStatusPrintsAndReportsThatStatusWasShown()
+    {
+        var factory = new Factory("Test Factory");
+        factory.ListCompanyPublicly(25, 1000, 10m);
+
+        var writer = new StringWriter();
+        var originalOut = Console.Out;
+        Console.SetOut(writer);
+
+        try
+        {
+            bool shown = factory.ShowMainMenuShareStatus();
+            Assert.True(shown);
+        }
+        finally
+        {
+            Console.SetOut(originalOut);
+        }
+
+        string output = writer.ToString();
+        Assert.Contains("Share price:", output);
+    }
+
+    [Fact]
     public void ResolvePathUsesProjectRootWhenFileIsNotInBinaryOutputFolder()
     {
         string path = AppFileNames.ResolvePath(AppFileNames.OrdersFileName);

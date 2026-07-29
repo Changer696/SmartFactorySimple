@@ -674,14 +674,15 @@ public class Factory
         return _sharePrice - previousPrice;
     }
 
-    public void ShowMainMenuShareStatus()
+    public bool ShowMainMenuShareStatus()
     {
         if (!_companyPubliclyListed)
         {
-            return;
+            return false;
         }
 
         ApplyMenuReturnFluctuation();
+        return true;
     }
 
     public List<Machine> GetMachinesRequiringMaintenance(int daysAhead = 7)
