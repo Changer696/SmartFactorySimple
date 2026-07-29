@@ -45,6 +45,37 @@ public class FactoryShareTests
     }
 
     [Fact]
+    public void ManagementDashboardShowsInventoryOrdersAndMachineStatus()
+    {
+        var factory = new Factory("Test Factory");
+        factory.AdaugaAngajat(new ProductionManager("PM001", "Maria Ionescu", 5500m, DateTime.Now.AddYears(-3)));
+        factory.AdaugaMasina(new SewingMachine("M001", "Test Machine", DateTime.Now.AddYears(-2)));
+        factory.AdaugaProdus(new WoodenCubes("MagicBlocks", 15, 30, 2, "S"));
+        factory.InitializeazaMaterialeSiRetete();
+        factory.CreazaComanda("PM001", "M001", "MagicBlocks", 4, Priority.High);
+
+        var writer = new StringWriter();
+        var originalOut = Console.Out;
+        Console.SetOut(writer);
+
+        try
+        {
+            factory.AfiseazaDashboardGestionare();
+        }
+        finally
+        {
+            Console.SetOut(originalOut);
+        }
+
+        string output = writer.ToString();
+        Assert.Contains("MANAGEMENT DASHBOARD", output);
+        Assert.Contains("Low-stock products", output);
+        Assert.Contains("Active orders", output);
+        Assert.Contains("Machine status", output);
+        Assert.Contains("MagicBlocks", output);
+    }
+
+    [Fact]
     public void LoadPersistentDataLoadsOrdersAfterMachinesAndEmployeesAreAvailable()
     {
         string path = AppFileNames.ResolvePath(AppFileNames.OrdersFileName);

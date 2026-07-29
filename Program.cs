@@ -149,6 +149,7 @@ class Program
         Console.WriteLine(Messages.MenuDirectorMachines);
         Console.WriteLine(Messages.MenuDirectorProducts);
         Console.WriteLine(Messages.MenuDirectorSales);
+        Console.WriteLine(Messages.MenuDirectorDashboard);
         Console.WriteLine(Messages.MenuDirectorLogs);
         Console.WriteLine(Messages.MenuDirectorListCompanyPublic);
         Console.WriteLine(Messages.MenuDirectorLogout);
@@ -180,9 +181,13 @@ class Program
                 }
 
                 break;
-            case "5": ShowOperationLogs(); break;
-            case "6": fabrica.ListCompanyPubliclyFromConsole(); break;
-            case "7": return Logout();
+            case "5":
+                fabrica.AfiseazaDashboardGestionare();
+                PauseAndContinue();
+                break;
+            case "6": ShowOperationLogs(); break;
+            case "7": fabrica.ListCompanyPubliclyFromConsole(); break;
+            case "8": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
         }
@@ -222,6 +227,7 @@ class Program
         Console.WriteLine(Messages.MenuProductionMachines);
         Console.WriteLine(Messages.MenuProductionProducts);
         Console.WriteLine(Messages.MenuProductionProduction);
+        Console.WriteLine(Messages.MenuProductionDashboard);
         Console.WriteLine(Messages.MenuProductionReport);
         Console.WriteLine(Messages.MenuProductionLogout);
         Console.WriteLine(Messages.MenuProductionExit);
@@ -235,8 +241,12 @@ class Program
             case "2": MeniuMasiniProductionManager(); break;
             case "3": fabrica.AfiseazaProduse(); break;
             case "4": MeniuProductieManager(); break;
-            case "5": fabrica.AfiseazaRaportGeneral(); break;
-            case "6": return Logout();
+            case "5":
+                fabrica.AfiseazaDashboardGestionare();
+                PauseAndContinue();
+                break;
+            case "6": fabrica.AfiseazaRaportGeneral(); break;
+            case "7": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
         }
@@ -471,6 +481,13 @@ class Program
             }
         }
         Console.WriteLine(Messages.MenuOperationHistoryFooter);
+    }
+
+    static void PauseAndContinue()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to continue...");
+        Console.ReadLine();
     }
 
     // Logout and re-authenticate. Returns true to continue running, false to exit application.

@@ -498,3 +498,33 @@
 2026-07-29 10:31:25 | PM001 | Order created: ORD2 (Barbie) qty=32 priority=Medium
 2026-07-29 10:31:43 | maria_ionescu | User logged out
 2026-07-29 10:31:53 | alex_popescu | Successful login
+2026-07-29 11:00:24 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:00:24 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:00:24 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 11:03:53 | director | Successful login
+2026-07-29 11:03:53 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:03:53 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:03:53 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:03:53 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:03:53 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:03:53 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:04:13 | alex_popescu | Successful login
+2026-07-29 11:04:13 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:04:13 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:04:13 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:04:13 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:04:13 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:04:13 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:05:15 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:05:15 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:05:15 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 11:05:49 | director | Successful login
+2026-07-29 11:05:49 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:05:49 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:05:49 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:05:49 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:05:49 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:05:49 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:07:18 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:07:18 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:07:18 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High

@@ -391,6 +391,14 @@ public class Factory
         if (comanda.Masina.Status == MachineStatus.Running)
         {
             comanda.InregistreazaProductie(unitati);
+
+            Product produs = GasesteProdus(comanda.NumeProdus);
+            if (produs != null)
+            {
+                produs.AdaugaStoc(unitati);
+                Console.WriteLine(Messages.NewStockAdded(comanda.NumeProdus, unitati));
+            }
+
             Logging.Log(idOperator, $"Produced {unitati} units for order {idComanda} ({comanda.NumeProdus})");
         }
     }
@@ -781,6 +789,85 @@ public class Factory
         }
 
         products.ForEach(product => DisplayInventoryAlert(product, threshold));
+    }
+
+    public void AfiseazaDashboardGestionare(int threshold = 5)
+    {
+        var lowStockProducts = GetLowStockProducts(threshold);
+        var activeOrders = _orderRepository.GetAllActive();
+        var machines = _machineRepository.GetAll();
+        var maintenanceMachines = GetMachinesRequiringMaintenance(7);
+        var rawMaterials = _stocMateriale.OrderBy(kv => kv.Key).ToList();
+
+        Console.WriteLine(Messages.ManagementDashboardHeader);
+        Console.WriteLine(string.Format(Messages.ManagementDashboardSummary, Nume, _productRepository.Count, lowStockProducts.Count, activeOrders.Count, maintenanceMachines.Count));
+
+        Console.WriteLine(Messages.ManagementDashboardInventoryHeader);
+        if (_productRepository.Count == 0)
+        {
+            Console.WriteLine(Messages.ManagementDashboardNoProducts);
+        }
+        else
+        {
+            foreach (var product in _productRepository.GetAll().OrderBy(p => p.Nume))
+            {
+                Console.WriteLine(product.Cantitate <= threshold
+                    ? $"- {product.Nume}: {product.Cantitate} units (LOW)"
+                    : $"- {product.Nume}: {product.Cantitate} units");
+            }
+        }
+
+        Console.WriteLine(Messages.ManagementDashboardRawMaterialsHeader);
+        if (rawMaterials.Count == 0)
+        {
+            Console.WriteLine(Messages.ManagementDashboardNoRawMaterials);
+        }
+        else
+        {
+            foreach (var material in rawMaterials)
+            {
+                Console.WriteLine($"- {material.Key}: {material.Value} units");
+            }
+        }
+
+        Console.WriteLine(Messages.ManagementDashboardLowStockHeader);
+        if (lowStockProducts.Count == 0)
+        {
+            Console.WriteLine(Messages.ManagementDashboardNoLowStock);
+        }
+        else
+        {
+            foreach (var product in lowStockProducts)
+            {
+                Console.WriteLine($"- {product.Nume}: {product.Cantitate} units");
+            }
+        }
+
+        Console.WriteLine(Messages.ManagementDashboardOrdersHeader);
+        if (activeOrders.Count == 0)
+        {
+            Console.WriteLine(Messages.ManagementDashboardNoActiveOrders);
+        }
+        else
+        {
+            foreach (var order in activeOrders.OrderBy(o => o.Prioritate).ThenBy(o => o.Status))
+            {
+                Console.WriteLine($"- {order.Id}: {order.NumeProdus} | Qty: {order.CantitateTarget} | Priority: {order.Prioritate} | Status: {order.Status}");
+            }
+        }
+
+        Console.WriteLine(Messages.ManagementDashboardMachinesHeader);
+        if (machines.Count == 0)
+        {
+            Console.WriteLine(Messages.ManagementDashboardNoMachines);
+        }
+        else
+        {
+            foreach (var machine in machines)
+            {
+                Console.WriteLine($"- {machine.SerialNumber}: {machine.Nume} | {machine.Status} | {machine.Conditie} | {machine.GetHealthAlert()}");
+            }
+        }
     }
 
     private static void DisplayInventoryAlert(Product product, int threshold = 5)

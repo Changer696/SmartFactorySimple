@@ -1,4 +1,3 @@
 # Production Orders
 # Format: Id;MachineSerial;ProductName;Quantity;Priority;Status;CreatedBy;CreatedAt
-ORD1;3;hsf;3;Medium;Created;PM001;2026-07-17T11:08:58
-ORD2;M001;Barbie;32;Medium;Created;PM001;2026-07-29T10:31:25
+ORD1;M001;MagicBlocks;4;High;Created;PM001;2026-07-29T11:07:18
