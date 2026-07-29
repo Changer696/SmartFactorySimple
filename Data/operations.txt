@@ -467,3 +467,34 @@
 2026-07-28 21:52:21 | PM001 | Employee added: Maria Ionescu
 2026-07-28 21:55:32 | PM001 | Employee added: Maria Ionescu
 2026-07-28 21:56:42 | PM001 | Employee added: Maria Ionescu
+2026-07-29 10:23:18 | director | Successful login
+2026-07-29 10:23:18 | DIR001 | Employee added: Alex Popescu
+2026-07-29 10:23:18 | PM001 | Employee added: Maria Ionescu
+2026-07-29 10:23:18 | ENG001 | Employee added: Ion Vasile
+2026-07-29 10:23:18 | TH001 | Employee added: Andrei Marin
+2026-07-29 10:23:18 | OP001 | Employee added: Elena Dumitru
+2026-07-29 10:23:18 | SA001 | Employee added: Ioana Radu
+2026-07-29 10:29:40 | manager | Successful login
+2026-07-29 10:29:40 | DIR001 | Employee added: Alex Popescu
+2026-07-29 10:29:40 | PM001 | Employee added: Maria Ionescu
+2026-07-29 10:29:40 | ENG001 | Employee added: Ion Vasile
+2026-07-29 10:29:40 | TH001 | Employee added: Andrei Marin
+2026-07-29 10:29:40 | OP001 | Employee added: Elena Dumitru
+2026-07-29 10:29:40 | SA001 | Employee added: Ioana Radu
+2026-07-29 10:30:23 | director | Successful login
+2026-07-29 10:30:23 | DIR001 | Employee added: Alex Popescu
+2026-07-29 10:30:23 | PM001 | Employee added: Maria Ionescu
+2026-07-29 10:30:23 | ENG001 | Employee added: Ion Vasile
+2026-07-29 10:30:23 | TH001 | Employee added: Andrei Marin
+2026-07-29 10:30:23 | OP001 | Employee added: Elena Dumitru
+2026-07-29 10:30:23 | SA001 | Employee added: Ioana Radu
+2026-07-29 10:31:10 | maria_ionescu | Successful login
+2026-07-29 10:31:10 | DIR001 | Employee added: Alex Popescu
+2026-07-29 10:31:10 | PM001 | Employee added: Maria Ionescu
+2026-07-29 10:31:10 | ENG001 | Employee added: Ion Vasile
+2026-07-29 10:31:10 | TH001 | Employee added: Andrei Marin
+2026-07-29 10:31:10 | OP001 | Employee added: Elena Dumitru
+2026-07-29 10:31:10 | SA001 | Employee added: Ioana Radu
+2026-07-29 10:31:25 | PM001 | Order created: ORD2 (Barbie) qty=32 priority=Medium
+2026-07-29 10:31:43 | maria_ionescu | User logged out
+2026-07-29 10:31:53 | alex_popescu | Successful login

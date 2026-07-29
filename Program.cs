@@ -94,6 +94,7 @@ class Program
         bool running = true;
         while (running)
         {
+            Console.Clear();
             Console.WriteLine(Messages.FactoryHeader);
             Console.WriteLine(Messages.LoggedInAs(loggedInUser.Username, loggedInUser.Role));
             EmployeeRole rolCurent;
@@ -143,6 +144,7 @@ class Program
 
     static bool MeniuDirector()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuDirectorEmployees);
         Console.WriteLine(Messages.MenuDirectorMachines);
         Console.WriteLine(Messages.MenuDirectorProducts);
@@ -215,6 +217,7 @@ class Program
     */
     static bool MeniuProductionManager1()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuProductionEmployees);
         Console.WriteLine(Messages.MenuProductionMachines);
         Console.WriteLine(Messages.MenuProductionProducts);
@@ -242,6 +245,7 @@ class Program
     }
     static void MeniuProductieManager()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuProductionManagerTitle);
         Console.WriteLine(Messages.MenuProductionManagerCreateOrder);
         Console.WriteLine(Messages.MenuProductionManagerShowOrders);
@@ -260,6 +264,7 @@ class Program
     }
     static void MeniuMasiniProductionManager()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuMachinesTitle);
         Console.WriteLine(Messages.MenuMachinesAdd);
         Console.WriteLine(Messages.MenuMachinesShow);
@@ -302,6 +307,7 @@ class Program
     }
     static bool MeniuEngineer()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuEngineerTitle);
         Console.WriteLine(Messages.MenuEngineerMaintenance);
         Console.WriteLine(Messages.MenuEngineerHealth);
@@ -324,6 +330,7 @@ class Program
    
     static bool MeniuTechnician()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuTechnicianTitle);
         Console.WriteLine(Messages.MenuTechnicianShow);
         Console.WriteLine(Messages.MenuTechnicianRepair);
@@ -361,6 +368,7 @@ class Program
 
     static bool MeniuMachineOperator()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuOperatorProduction);
         Console.WriteLine(Messages.MenuOperatorShowMachines);
         Console.WriteLine(Messages.MenuOperatorStop);
@@ -386,6 +394,7 @@ class Program
 
     static void MeniuProductie1()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuProductionTitle);
         Console.WriteLine(Messages.MenuProductionExecuteOrder);
         Console.WriteLine(Messages.MenuProductionAutoOrder);
@@ -402,6 +411,7 @@ class Program
 
     static bool MeniuSalesAgent()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuSalesAgentTitle);
         Console.WriteLine(Messages.MenuSalesAgentSales);
         Console.WriteLine(Messages.MenuSalesAgentProducts);
@@ -446,8 +456,7 @@ class Program
     }
     static void ShowOperationLogs()
     {
-
-
+        Console.Clear();
         Console.WriteLine(Messages.OperationHistoryHeader);
         string[] entries = Logging.GetAllEntries();
         if (entries.Length == 0)
@@ -488,6 +497,7 @@ class Program
 
     static void MeniuAngajati()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuEmployeesTitle);
         Console.WriteLine(Messages.MenuEmployeesAdd);
         Console.WriteLine(Messages.MenuEmployeesShow);
@@ -649,6 +659,7 @@ class Program
 
     static void MeniuMasini()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuMachinesTitle);
         Console.WriteLine(Messages.MenuMachinesAdd);
         Console.WriteLine(Messages.MenuMachinesShow);
@@ -777,6 +788,7 @@ class Program
 
     static void MeniuProduse()
     {
+        Console.Clear();
         Console.WriteLine(Messages.MenuProductionProducts);
         Console.WriteLine(Messages.MenuProductsAdd);
         Console.WriteLine(Messages.MenuProductsShowAll);
@@ -894,6 +906,7 @@ class Program
 
         static void MeniuProductie()
         {
+            Console.Clear();
             Console.WriteLine(Messages.ProductionMenuTitle);
             Console.WriteLine(Messages.MenuProductionCreateOrder);
             Console.WriteLine(Messages.MenuProductionExecuteOrder);
@@ -987,6 +1000,7 @@ class Program
 
         static void MeniuVanzari()
         {
+            Console.Clear();
             Console.WriteLine(Messages.SalesMenuTitle);
             Console.WriteLine(Messages.MenuSalesSellProduct);
             Console.WriteLine(Messages.MenuSalesViewSalesReport);
