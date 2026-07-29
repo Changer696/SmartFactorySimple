@@ -562,3 +562,6 @@
 2026-07-29 11:17:31 | TH001 | Employee added: Andrei Marin
 2026-07-29 11:17:31 | OP001 | Employee added: Elena Dumitru
 2026-07-29 11:17:31 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:33:44 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:33:44 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:33:44 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High

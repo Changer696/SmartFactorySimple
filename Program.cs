@@ -982,13 +982,12 @@ class Program
         int cantitate = int.Parse(Console.ReadLine());
 
         Console.WriteLine(Messages.PromptPriority);
-        Console.Write(Messages.MenuPromptChoose);
         string prio = Console.ReadLine();
 
         Priority prioritate;
-        if (prio == "1")
+        if (string.Equals(prio, "low", StringComparison.OrdinalIgnoreCase))
             prioritate = Priority.Low;
-        else if (prio == "3")
+        else if (string.Equals(prio, "high", StringComparison.OrdinalIgnoreCase))
             prioritate = Priority.High;
         else
             prioritate = Priority.Medium;

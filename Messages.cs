@@ -205,7 +205,7 @@ namespace SmartFactorySimple
         public const string PromptQuantitySell = "Quantity to sell: ";
         public const string PromptProductNameToManufacture = "Product name to manufacture (type exactly as above): ";
         public const string PromptTargetAmount = "Target amount: ";
-        public const string PromptPriority = "Priority: 1.Low  2.Medium  3.High";
+        public const string PromptPriority = "Priority (Low / Medium / High): ";
         public const string PromptOrderId = "ID Order (ex: ORD1): ";
         public const string PromptUnitsToProduce = "Units to produce now: ";
         public const string PromptMachineSerialOrder = "Serial number for a machine: ";
