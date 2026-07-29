@@ -163,10 +163,12 @@ class Program
             case "2":
                 fabrica.AfiseazaMasini();
                 Console.WriteLine(Messages.MenuDirectorMachineView);
+                PauseAndContinue();
                 break;
             case "3":
                 fabrica.AfiseazaProduse();
                 Console.WriteLine(Messages.MenuDirectorProductView);
+                PauseAndContinue();
                 break;           
             case "4":
                 Console.WriteLine(Messages.MenuDirectorSalesTitle);
@@ -179,13 +181,13 @@ class Program
                     case "2": fabrica.AfiseazaRaportGeneral(); break;
                     default: Console.WriteLine(Messages.MenuDirectorSalesOption); break;
                 }
+                PauseAndContinue();
 
                 break;
             case "5":
                 fabrica.AfiseazaDashboardGestionare();
-                PauseAndContinue();
                 break;
-            case "6": ShowOperationLogs(); break;
+            case "6": ShowOperationLogs(); PauseAndContinue(); break;
             case "7": fabrica.ListCompanyPubliclyFromConsole(); break;
             case "8": return Logout();
             case "0": return false;
@@ -237,15 +239,14 @@ class Program
 
         switch (alegere)
         {
-            case "1": fabrica.AfiseazaAngajati(); break;
+            case "1": fabrica.AfiseazaAngajati(); PauseAndContinue(); break;
             case "2": MeniuMasiniProductionManager(); break;
-            case "3": fabrica.AfiseazaProduse(); break;
+            case "3": fabrica.AfiseazaProduse(); PauseAndContinue(); break;
             case "4": MeniuProductieManager(); break;
             case "5":
                 fabrica.AfiseazaDashboardGestionare();
-                PauseAndContinue();
                 break;
-            case "6": fabrica.AfiseazaRaportGeneral(); break;
+            case "6": fabrica.AfiseazaRaportGeneral(); PauseAndContinue(); break;
             case "7": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -267,9 +268,15 @@ class Program
         if (alegere == "1")
             CreazaComandaMan();
         else if (alegere == "2")
+        {
             fabrica.AfiseazaComenzi();
+            PauseAndContinue();
+        }
         else if (alegere == "3")
+        {
             fabrica.AfiseazaComenziSortedByPriority();
+            PauseAndContinue();
+        }
 
     }
     static void MeniuMasiniProductionManager()
@@ -328,9 +335,9 @@ class Program
 
         switch (alegere)
         {
-            case "1": fabrica.AfiseazaMasini(); break;
-            case "2": fabrica.AfiseazaMentenantaPredictiva(); break;
-            case "3": fabrica.AfiseazaStareMasini(); break;
+            case "1": fabrica.AfiseazaMasini(); PauseAndContinue(); break;
+            case "2": fabrica.AfiseazaMentenantaPredictiva(); PauseAndContinue(); break;
+            case "3": fabrica.AfiseazaStareMasini(); PauseAndContinue(); break;
             case "4": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -355,15 +362,18 @@ class Program
         {
             case "1":
                 fabrica.AfiseazaMasini();
+                PauseAndContinue();
                 break;
             case "2":
                 ReparaMasina();
                 break;
             case "3":
                 fabrica.AfiseazaMasiniInMentenanta();
+                PauseAndContinue();
                 break;
             case "4":
                 AfiseazaIstoricReparatii();
+                PauseAndContinue();
                 break;
             case "5":
                 return Logout();
@@ -392,7 +402,7 @@ class Program
         switch (alegere)
         {
             case "1": MeniuProductie1(); break;
-            case "2": fabrica.AfiseazaMasini(); break;
+            case "2": fabrica.AfiseazaMasini(); PauseAndContinue(); break;
             case "3": StopMachine(); break;
             case "4": StartMachine(); break;
             case "5": return Logout();
@@ -434,8 +444,8 @@ class Program
         switch (alegere)
         {
             case "1": MeniuVanzari(); break;
-            case "2": fabrica.AfiseazaProduse(); break;
-            case "3": fabrica.AfiseazaStocMaterialePrime(); break; // Apelăm funcția din Factory
+            case "2": fabrica.AfiseazaProduse(); PauseAndContinue(); break;
+            case "3": fabrica.AfiseazaStocMaterialePrime(); PauseAndContinue(); break; // Apelăm funcția din Factory
             case "4": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -819,7 +829,10 @@ class Program
         if (alegere == "1")
             AdaugaProdus();
         else if (alegere == "2")
+        {
             fabrica.AfiseazaProduse();
+            PauseAndContinue();
+        }
         else if (alegere == "3")
             AdaugaStocProdus();
         else if (alegere == "4")
@@ -940,9 +953,15 @@ class Program
             else if (alegere == "3")
                 ExecutaComanaPrioritara();
             else if (alegere == "4")
+            {
                 fabrica.AfiseazaComenzi();
+                PauseAndContinue();
+            }
             else if (alegere == "5")
+            {
                 fabrica.AfiseazaComenziSortedByPriority();
+                PauseAndContinue();
+            }
         }
 
     static void CreazaComandaMan()
@@ -1028,9 +1047,15 @@ class Program
             if (alegere == "1")
                 VindeProdus();
             else if (alegere == "2")
+            {
                 fabrica.AfiseazaRaportVanzari();
+                PauseAndContinue();
+            }
             else if (alegere == "3")
+            {
                 fabrica.AfiseazaRaportGeneral();
+                PauseAndContinue();
+            }
         }
 
         static void VindeProdus()

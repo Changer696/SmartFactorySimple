@@ -868,6 +868,10 @@ public class Factory
                 Console.WriteLine($"- {machine.SerialNumber}: {machine.Nume} | {machine.Status} | {machine.Conditie} | {machine.GetHealthAlert()}");
             }
         }
+
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to continue...");
+        Console.ReadLine();
     }
 
     private static void DisplayInventoryAlert(Product product, int threshold = 5)

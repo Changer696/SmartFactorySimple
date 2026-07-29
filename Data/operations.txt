@@ -528,3 +528,37 @@
 2026-07-29 11:07:18 | PM001 | Employee added: Maria Ionescu
 2026-07-29 11:07:18 | PM001 | Employee added: Maria Ionescu
 2026-07-29 11:07:18 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 11:09:34 | director | Successful login
+2026-07-29 11:09:34 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:09:34 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:09:34 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:09:34 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:09:34 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:09:34 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:11:46 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:11:46 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:11:46 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 11:14:05 | director | Successful login
+2026-07-29 11:14:05 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:14:05 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:14:05 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:14:05 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:14:05 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:14:05 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:16:24 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:16:24 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:16:24 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-29 11:16:39 | director | Successful login
+2026-07-29 11:16:39 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:16:39 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:16:39 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:16:39 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:16:39 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:16:39 | SA001 | Employee added: Ioana Radu
+2026-07-29 11:17:31 | director | Successful login
+2026-07-29 11:17:31 | DIR001 | Employee added: Alex Popescu
+2026-07-29 11:17:31 | PM001 | Employee added: Maria Ionescu
+2026-07-29 11:17:31 | ENG001 | Employee added: Ion Vasile
+2026-07-29 11:17:31 | TH001 | Employee added: Andrei Marin
+2026-07-29 11:17:31 | OP001 | Employee added: Elena Dumitru
+2026-07-29 11:17:31 | SA001 | Employee added: Ioana Radu
