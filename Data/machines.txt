@@ -1,0 +1,2 @@
+SewingMachine;3;da;Stopped;Excellent;2026-07-17 09:52:26;0;2026-07-17 10:35:07;nana,1,True,2026-07-17 09:52:33
+CuttingMachine;M001;gfa;Stopped;Good;2026-07-17 11:06:13;0;;

@@ -5,4 +5,8 @@
     <Nullable>disable</Nullable>
     <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="SmartFactorySimple.Tests/**/*.cs" />
+  </ItemGroup>
 </Project>

@@ -31,7 +31,7 @@ public class ProductionOrder : IIdentifiable
     {
         if (Status == ProductionOrderStatus.Completed)
         {
-            Console.WriteLine("The order is already completed!");
+            Console.WriteLine(Messages.OrderAlreadyCompleted);
             return;
         }
         CantitateProdusa = CantitateProdusa + unitati;
@@ -40,14 +40,14 @@ public class ProductionOrder : IIdentifiable
         {
             CantitateProdusa = CantitateTarget;
             Status = ProductionOrderStatus.Completed;
-            Console.WriteLine("Order " + Id + " COMPLETED!");
+            Console.WriteLine(Messages.OrderCompleted(Id));
             if (CreatDe != null)
                 Logging.Log(CreatDe.Id, $"Produced {unitati} units for order {Id} ({NumeProdus}) - completed");
         }
         else
         {
             Status = ProductionOrderStatus.InProgress;
-            Console.WriteLine("Progres " + Id + ": " + CantitateProdusa + "/" + CantitateTarget);
+            Console.WriteLine(Messages.OrderProgress(Id, CantitateProdusa, CantitateTarget));
             if (CreatDe != null)
                 Logging.Log(CreatDe.Id, $"Produced {unitati} units for order {Id} ({NumeProdus})");
         }

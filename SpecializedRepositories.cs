@@ -40,7 +40,7 @@ public class EmployeeRepository : RepositoryWithId<Employee>
 
 public class MachineRepository : Repository<Machine>
 {
-    private readonly string MACHINES_FILE = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "machines.txt");
+    private readonly string MACHINES_FILE = AppFileNames.ResolvePath(AppFileNames.MachinesFileName);
 
     public Machine FindBySerialNumber(string serialNumber)
     {
@@ -257,7 +257,7 @@ public class ProductRepository : Repository<Product>
         }
     }
 
-    private readonly string PRODUCTS_FILE = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products.txt");
+    private readonly string PRODUCTS_FILE = AppFileNames.ResolvePath(AppFileNames.ProductsFileName);
 
     // ---------- SAVE / LOAD ----------
 

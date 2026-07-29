@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public class MachinePart
 {
@@ -34,6 +35,6 @@ public class MachinePart
         else
             status = "BROKEN";
 
-        Console.WriteLine("  The piece: " + Nume + " | Type: " + Tip + " | Status: " + status);
+        Console.WriteLine(Messages.MachinePartStatus(Nume, Tip, status));
     }
 }

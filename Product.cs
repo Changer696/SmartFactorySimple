@@ -1,4 +1,6 @@
 using System;
+using SmartFactorySimple;
+
 public abstract class Product
 {
     public decimal productionCost;
@@ -47,7 +49,7 @@ public abstract class Product
     {
         if (cantitate < 0)
         {
-            Console.WriteLine("The quantity can't be negative!");
+            Console.WriteLine(Messages.ProductQuantityNegative);
             return;
         }
         Cantitate = Cantitate + cantitate;
@@ -56,7 +58,7 @@ public abstract class Product
     {
         if (cantitate > Cantitate)
         {
-            Console.WriteLine("Insufficient stock!");
+            Console.WriteLine(Messages.InsufficientStock);
             return;
         }
         Cantitate = Cantitate - cantitate;
@@ -65,6 +67,6 @@ public abstract class Product
     public virtual void Afiseaza()
     {
         Console.WriteLine("  " + GetDescription());
-        Console.WriteLine(" -Production Cost=" + ProductionCost + " -sellingPrice= " + SellingPrice + " -RON - Stock: " + Cantitate);
+        Console.WriteLine(Messages.ProductDisplay(GetDescription(), ProductionCost, SellingPrice, Cantitate));
     }
 }

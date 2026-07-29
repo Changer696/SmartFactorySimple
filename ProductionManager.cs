@@ -1,4 +1,6 @@
 using System;
+using SmartFactorySimple;
+
 public class ProductionManager : Employee
 {
     public ProductionManager(string id, string nume, decimal salariu, DateTime dataAngajarii)
@@ -10,12 +12,12 @@ public class ProductionManager : Employee
     public ProductionOrder CreazaComanda(string idComanda, Machine masina,
                                           string produs, int cantitate, Priority prioritate)
     {
-        Console.WriteLine(Nume + " created the " + prioritate + " priority order " + idComanda + " for " + cantitate + " x " + produs);
+        Console.WriteLine(Messages.RoleDuty(Nume, "Production Manager") + " created the " + prioritate + " priority order " + idComanda + " for " + cantitate + " x " + produs);
         return new ProductionOrder(idComanda, masina, this, produs, cantitate, prioritate);
     }
 
     public override void PerformDuty()
     {
-        Console.WriteLine(Nume + " (Production Manager) coordinates production.");
+        Console.WriteLine(Messages.RoleDuty(Nume, "Production Manager") + " coordinates production.");
     }
 }

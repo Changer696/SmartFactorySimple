@@ -12,8 +12,7 @@ namespace SmartFactorySimple
 
         public override string GetDescription()
         {
-            
-            return "Frisbee:" + Nume + " " + Category + " Size " + Marime;
+            return Messages.ProductDescription("Frisbee", Nume, Category, Marime);
         }
     }
 }

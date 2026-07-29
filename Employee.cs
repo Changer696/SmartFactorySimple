@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public abstract class Employee : IIdentifiable
 {
@@ -26,9 +27,6 @@ public abstract class Employee : IIdentifiable
 
     public virtual void Afiseaza()
     {
-        Console.WriteLine("[" + Id + "] " + Nume +
-                          " - Role: " + Rol +
-                          " - Salary: " + Salariu +
-                          " - Period of activity: " + GetVechimeZile() + " days");
+        Console.WriteLine(Messages.EmployeeDisplay(Id, Nume, Rol, Salariu, GetVechimeZile()));
     }
 }

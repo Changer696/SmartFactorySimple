@@ -44,7 +44,7 @@ public abstract class Machine
     {
         if (NrPiese == 0)
         {
-            Console.WriteLine("There are no existing parts");
+            Console.WriteLine(Messages.NoExistingParts);
         }
          int sansa = _random.Next(1,101);
          if(sansa <= 20)
@@ -53,7 +53,7 @@ public abstract class Machine
             if (Piese[index].EFunctionala)
             {
                 Piese[index].Strica();
-                Console.WriteLine($"Pieces:{Piese[index].Nume} from {Nume} are broken");
+                Console.WriteLine(Messages.BrokenPart(Piese[index].Nume, Nume));
             }
         }
     }
@@ -99,13 +99,13 @@ public abstract class Machine
         int brokenParts = Piese.Take(NrPiese).Count(piesa => !piesa.EFunctionala);
 
         if (Status == MachineStatus.Maintenance || Conditie == MachineCondition.Critical)
-            return "CRITICAL: Maintenance is required immediately.";
+            return Messages.MachineHealthCritical;
         if (brokenParts > 0)
-            return $"WARNING: {brokenParts} broken part(s) require attention.";
+            return Messages.MachineHealthWarning(brokenParts);
         if (Conditie == MachineCondition.Worn || EstimateDaysUntilMaintenance() <= 7)
-            return $"WARNING: Preventive maintenance is due within {EstimateDaysUntilMaintenance()} day(s).";
+            return Messages.MachineHealthPreventiveMaintenanceDue(EstimateDaysUntilMaintenance());
 
-        return "HEALTHY: No maintenance alert.";
+        return Messages.MachineHealthHealthy;
     }
 
     protected void RegisterProductionCycle()
@@ -124,23 +124,23 @@ public abstract class Machine
     {
         if (Status == MachineStatus.Maintenance)
         {
-            Console.WriteLine(Nume + " It's under maintenance, it can't be started!");
+            Console.WriteLine(Messages.MachineUnderMaintenance(Nume));
             return;
         }
         if (!ArePieseComplete())
         {
-            Console.WriteLine(Nume + " has broken or missing parts!");
+            Console.WriteLine(Messages.MachineHasBrokenParts(Nume));
             return;
         }
         Status = MachineStatus.Running;
-        Console.WriteLine(Nume + " was turned on.");
+        Console.WriteLine(Messages.MachineTurnedOn(Nume));
         Logging.Log($"Started machine {SerialNumber}");
     }
 
     public virtual void Stop()
     {
         Status = MachineStatus.Stopped;
-        Console.WriteLine(Nume + " was stopped.");
+        Console.WriteLine(Messages.MachineTurnedOff(Nume));
         Logging.Log($"Stopped machine {SerialNumber}");
     }
 
@@ -148,7 +148,7 @@ public abstract class Machine
     {
         if (Status == MachineStatus.Running)
         {
-            Console.WriteLine("Stop the machine before maintenance!");
+            Console.WriteLine(Messages.StopMachineBeforeMaintenance);
             return;
         }
         Status = MachineStatus.Maintenance;
@@ -177,10 +177,6 @@ public abstract class Machine
 
     public virtual void Afiseaza()
     {
-        Console.WriteLine("[" + SerialNumber + "] " + Nume +
-                          " - Status: " + Status +
-                          " - Condition: " + Conditie +
-                          " - Age: " + GetVarstaZile() + " days" +
-                          " - Parts: " + NrPiese);
+        Console.WriteLine(Messages.MachineConditionLine(SerialNumber, Nume, Status, Conditie, GetVarstaZile(), NrPiese));
     }
 }

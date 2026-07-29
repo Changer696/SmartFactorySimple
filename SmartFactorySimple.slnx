@@ -7,4 +7,5 @@
     <File Path="bin/Debug/net10.0/products.txt" />
   </Folder>
   <Project Path="SmartFactorySimple.csproj" />
+  <Project Path="SmartFactorySimple.Tests/SmartFactorySimple.Tests.csproj" />
 </Solution>

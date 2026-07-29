@@ -13,17 +13,17 @@ public class SalesAgent : Employee
     {
         if (produs.Cantitate < cantitate)
         {
-            Console.WriteLine("Insufficient stock! Available: " + produs.Cantitate);
+            Console.WriteLine(Messages.ProductSaleInsufficientStock(produs.Cantitate));
             return false;
         }
         fabrica.RecordSale(produs.Nume, cantitate, produs.SellingPrice);
-        Console.WriteLine(Nume + " sold " + cantitate + "x " + produs.Nume);
+        Console.WriteLine(Messages.SalesMessage(Nume, cantitate, produs.Nume));
         Logging.Log(Id, $"Sold product {produs.Nume} x{cantitate}");
         return true;
     }
 
     public override void PerformDuty()
     {
-        Console.WriteLine(Nume + " (Sales Agent) sell the factory's products.");
+        Console.WriteLine(Messages.RoleDuty(Nume, "Sales Agent") + " sell the factory's products.");
     }
 }

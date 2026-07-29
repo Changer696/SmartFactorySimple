@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public class CuttingMachine : Machine
 {
@@ -11,10 +12,10 @@ public class CuttingMachine : Machine
     {
         if (Status != MachineStatus.Running)
         {
-            Console.WriteLine(Nume + " it's not on, it can't produce!");
+            Console.WriteLine(Messages.MachineNotRunning(Nume));
             return;
         }
-        Console.WriteLine(Nume + "Cuts the material according to the patterns.");
+        Console.WriteLine(Messages.MachineProduceMessage(Nume));
         DegradeazaConditia();
         StareVerificarePiesa();
         RegisterProductionCycle();
@@ -24,8 +25,8 @@ public class CuttingMachine : Machine
     public override string RunDiagnostics()
     {
         if (Conditie == MachineCondition.Critical)
-            return "WARNING: The blade is dull, needs replacing!";
+            return Messages.MachineDiagnosticWarning("The blade is dull, needs replacing!");
         else
-            return "Sharp blade. Normal operation.";
+            return Messages.MachineDiagnosticHealthy("Sharp blade. Normal operation.");
     }
 }

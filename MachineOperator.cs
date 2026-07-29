@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public class MachineOperator : Employee
 {
@@ -17,13 +18,13 @@ public class MachineOperator : Employee
         }
         else if (masina.Status == MachineStatus.Maintenance)
         {
-            Console.WriteLine("The car is in maintenance, wait for it to be repaired");
+            Console.WriteLine(Messages.MachineOperatorMaintenanceMessage);
             return;
         }
         else
         {
-            Console.WriteLine("The car is off, you can't execute the command");
-            Console.WriteLine("Do you want to start the car? YES/NO");
+            Console.WriteLine(Messages.MachineOperatorOffMessage);
+            Console.WriteLine(Messages.MachineOperatorStartPrompt);
             string continuare = Console.ReadLine();
             if (continuare == "YES")
             { 
@@ -40,6 +41,6 @@ public class MachineOperator : Employee
 
     public override void PerformDuty()
     {
-        Console.WriteLine(Nume + " (Machine Operator) operates the machines.");
+        Console.WriteLine(Messages.RoleDuty(Nume, "Machine Operator") + " operates the machines.");
     }
 }

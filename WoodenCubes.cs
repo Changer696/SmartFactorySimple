@@ -1,4 +1,6 @@
 ﻿using System;
+using SmartFactorySimple;
+
 public class WoodenCubes : Product
 {
     public string Marime;
@@ -9,6 +11,6 @@ public class WoodenCubes : Product
     }
     public override string GetDescription()
     {
-        return "Wooden Cubes:" +Nume + " " + Category + " Size " + Marime ;
+        return Messages.ProductDescription("Wooden Cubes", Nume, Category, Marime);
     }
 }

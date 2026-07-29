@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public class SewingMachine : Machine
 {
@@ -11,10 +12,10 @@ public class SewingMachine : Machine
     {
         if (Status != MachineStatus.Running)
         {
-            Console.WriteLine(Nume + " isn't started!");
+            Console.WriteLine(Messages.SewingMachineNotStarted(Nume));
             return;
         }
-        Console.WriteLine(Nume + " sews the material .");
+        Console.WriteLine(Messages.SewingProduceMessage(Nume));
         DegradeazaConditia();
         StareVerificarePiesa();
         RegisterProductionCycle();
@@ -23,8 +24,8 @@ public class SewingMachine : Machine
     public override string RunDiagnostics()
     {
         if (Conditie == MachineCondition.Critical)
-            return "WARNING: The needle tension is irregular!";
+            return Messages.MachineDiagnosticWarning("The needle tension is irregular!");
         else
-            return "Needle and thread checked. Working normally.";
+            return Messages.MachineDiagnosticHealthy("Needle and thread checked. Working normally.");
     }
 }

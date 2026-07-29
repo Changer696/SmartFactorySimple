@@ -1,4 +1,5 @@
 using System;
+using SmartFactorySimple;
 
 public class Engineer : Employee
 {
@@ -11,11 +12,11 @@ public class Engineer : Employee
     public void Inspecteaza(Machine masina)
     {
         string rezultat = masina.RunDiagnostics();
-        Console.WriteLine(Nume + " (Engineer) inspected the  " + masina.Nume + ": " + rezultat);
+        Console.WriteLine(Messages.RoleDuty(Nume, "Engineer") + " inspected the  " + masina.Nume + ": " + rezultat);
     }
 
     public override void PerformDuty()
     {
-        Console.WriteLine(Nume + " (Engineer) inspects the machines.");
+        Console.WriteLine(Messages.RoleDuty(Nume, "Engineer") + " inspects the machines.");
     }
 }

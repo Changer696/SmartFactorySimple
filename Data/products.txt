@@ -1,0 +1,7 @@
+WoodenCubes;MagicBlocks;EducationalToys;15;30;3;S
+Doll;Barbie;PretendToys;12;50;7;S
+TedyBear;Barnie;PretendToys;20;60;15;M
+Ball;Football;OutdoorToys;13;50;5;Normal
+Frisbee;OZN;OutdoorToys;10;25;7;S
+Doll;gfds;PretendToys;3999;39;3;s
+Doll;jhfd;PretendToys;39;356;3;s

@@ -9,10 +9,10 @@ namespace SmartFactorySimple
     {
         private static readonly object _lock = new object();
         private static readonly StackRepository<string> _stack = new StackRepository<string>();
-        private const string DefaultFileName = "operations.txt";
+        private const string DefaultFileName = AppFileNames.OperationsFileName;
 
        
-        public static string FilePath { get; set; } = Path.Combine(Directory.GetCurrentDirectory(), DefaultFileName);
+        public static string FilePath { get; set; } = AppFileNames.ResolvePath(DefaultFileName);
 
        
         public static void Log(string username, string description)
