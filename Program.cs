@@ -1,5 +1,6 @@
 using SmartFactorySimple;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 public static class AppFileNames
@@ -72,6 +73,7 @@ public static class AppFileNames
 
 class Program
 {
+    private static Stack<Action> _undoStack = new Stack<Action>();
     static Factory fabrica = new Factory("TOYS R US");
     static Login.EmployeeCredential loggedInUser;
     static Login loginManager;
@@ -151,6 +153,7 @@ class Program
         Console.WriteLine(Messages.MenuDirectorDashboard);
         Console.WriteLine(Messages.MenuDirectorLogs);
         Console.WriteLine(Messages.MenuDirectorListCompanyPublic);
+        Console.WriteLine(Messages.MenuUndo);
         Console.WriteLine(Messages.MenuDirectorLogout);
         Console.WriteLine(Messages.MenuDirectorExit);
         Console.Write(Messages.MenuPromptChoose);
@@ -191,6 +194,9 @@ class Program
             case "7":
                 fabrica.ListCompanyPubliclyFromConsole();
                 PauseAndContinue();
+                break;
+            case "9":
+                UndoLastAction();
                 break;
             case "8": return Logout();
             case "0": return false;
@@ -236,6 +242,7 @@ class Program
         Console.WriteLine(Messages.MenuProductionProduction);
         Console.WriteLine(Messages.MenuProductionDashboard);
         Console.WriteLine(Messages.MenuProductionReport);
+        Console.WriteLine("8. Undo");
         Console.WriteLine(Messages.MenuProductionLogout);
         Console.WriteLine(Messages.MenuProductionExit);
         Console.Write(Messages.MenuPromptChoose);
@@ -253,6 +260,9 @@ class Program
                 PauseAndContinue();
                 break;
             case "6": fabrica.AfiseazaRaportGeneral(); PauseAndContinue(); break;
+            case "8":
+                UndoLastAction();
+                break;
             case "7": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -272,7 +282,10 @@ class Program
         string alegere = Console.ReadLine();
 
         if (alegere == "1")
-            CreazaComandaMan();
+           
+           { CreazaComandaMan();
+           PauseAndContinue();
+           }
         else if (alegere == "2")
         {
             fabrica.AfiseazaComenzi();
@@ -303,6 +316,7 @@ class Program
         else if (alegere == "2")
         {
             fabrica.AfiseazaMasini();
+            PauseAndContinue();
         }
         /*else if (alegere == "3")                                                  
         {
@@ -336,6 +350,7 @@ class Program
         Console.WriteLine(Messages.MenuEngineerTitle);
         Console.WriteLine(Messages.MenuEngineerMaintenance);
         Console.WriteLine(Messages.MenuEngineerHealth);
+        Console.WriteLine("5. Undo");
         Console.WriteLine(Messages.MenuEngineerLogout);
         Console.WriteLine(Messages.MenuEngineerExit);
         Console.Write(Messages.MenuPromptChoose);
@@ -346,6 +361,9 @@ class Program
             case "1": fabrica.AfiseazaMasini(); PauseAndContinue(); break;
             case "2": fabrica.AfiseazaMentenantaPredictiva(); PauseAndContinue(); break;
             case "3": fabrica.AfiseazaStareMasini(); PauseAndContinue(); break;
+            case "5":
+                UndoLastAction();
+                break;
             case "4": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -363,6 +381,7 @@ class Program
         Console.WriteLine(Messages.MenuTechnicianRepair);
         Console.WriteLine(Messages.MenuTechnicianMaintenance);
         Console.WriteLine(Messages.MenuTechnicianHistory);
+        Console.WriteLine("6. Undo");
         Console.WriteLine(Messages.MenuTechnicianLogout);
         Console.WriteLine(Messages.MenuTechnicianExit);
         Console.Write(Messages.MenuPromptChoose);
@@ -385,6 +404,9 @@ class Program
                 AfiseazaIstoricReparatii();
                 PauseAndContinue();
                 break;
+            case "6":
+                UndoLastAction();
+                break;
             case "5":
                 return Logout();
             case "0":
@@ -405,6 +427,7 @@ class Program
         Console.WriteLine(Messages.MenuOperatorShowMachines);
         Console.WriteLine(Messages.MenuOperatorStop);
         Console.WriteLine(Messages.MenuOperatorStart);
+        Console.WriteLine("6. Undo");
         Console.WriteLine(Messages.MenuOperatorLogout);
 
         Console.WriteLine(Messages.MenuOperatorExit);
@@ -417,6 +440,9 @@ class Program
             case "2": fabrica.AfiseazaMasini(); PauseAndContinue(); break;
             case "3": StopMachine(); break;
             case "4": StartMachine(); break;
+            case "6":
+                UndoLastAction();
+                break;
             case "5": return Logout();
             case "0": return false;
             default: Console.WriteLine(Messages.InvalidOption); break;
@@ -451,6 +477,7 @@ class Program
         Console.WriteLine(Messages.MenuSalesAgentSales);
         Console.WriteLine(Messages.MenuSalesAgentProducts);
         Console.WriteLine(Messages.MenuSalesAgentMaterials);
+        Console.WriteLine("5. Undo");
         Console.WriteLine(Messages.MenuSalesAgentLogout);
         Console.WriteLine(Messages.MenuSalesAgentExit);
         Console.Write(Messages.MenuPromptChoose);
@@ -461,6 +488,9 @@ class Program
             case "1": MeniuVanzari(); break;
             case "2": fabrica.AfiseazaProduse(); PauseAndContinue(); break;
             case "3": fabrica.AfiseazaStocMaterialePrime(); PauseAndContinue(); break; // Apelăm funcția din Factory
+            case "5":
+                UndoLastAction();
+                break;
             case "4": return Logout();
             case "0": return false;
             default: Console.WriteLine("Invalid option!"); break;
@@ -562,7 +592,20 @@ class Program
             fabrica.AfiseazaAngajati();
             Console.Write(Messages.PromptEmployeeIdDelete);
             string id = Console.ReadLine();
-            fabrica.StergeAngajat(id);
+            Employee removed = fabrica.GasesteAngajat(id);
+            Login.EmployeeCredential credential = loginManager.FindCredentialByEmployeeId(id);
+            if (removed != null && fabrica.StergeAngajat(id))
+            {
+                loginManager.RemoveEmployeeCredentialByEmployeeId(id);
+                InregistreazaUndo(() =>
+                {
+                    fabrica.AdaugaAngajat(removed);
+                    if (credential != null)
+                    {
+                        loginManager.AddEmployeeCredential(credential);
+                    }
+                });
+            }
             PauseAndContinue();
         }
         else if (alegere == "4")
@@ -655,6 +698,11 @@ class Program
             if (loginManager.SaveEmployeeCredential(id, username, password, role))
             {
                 Console.WriteLine(Messages.EmployeeAddedSuccessfully);
+                InregistreazaUndo(() =>
+                {
+                    fabrica.StergeAngajat(id);
+                    loginManager.RemoveEmployeeCredentialByEmployeeId(id);
+                });
             }
             else
             {
@@ -1024,6 +1072,29 @@ class Program
 
         fabrica.CreazaComanda(idManager, serial, produs, cantitate, prioritate);
     }
+        static void UndoLastAction()
+        {
+            Console.Clear();
+            if (_undoStack.Count > 0)
+            {
+                Action lastAction = _undoStack.Pop();
+                lastAction.Invoke();
+                Console.WriteLine("Last action undone.");
+            }
+            else
+            {
+                Console.WriteLine("No actions to undo.");
+            }
+            PauseAndContinue();
+        }
+
+        static void InregistreazaUndo(Action undoAction)
+        {
+            if (undoAction != null)
+            {
+                _undoStack.Push(undoAction);
+            }
+        }
 
     static void ExecutaComanda()
         {
@@ -1055,9 +1126,8 @@ class Program
 
         static void ExecutaComanaPrioritara()
         {
-            fabrica.AfiseazaAngajati();
-            Console.Write(Messages.PromptMachineOperatorId);
-            string idOp = Console.ReadLine();
+
+        string idOp = loggedInUser.EmployeeId;
 
             ProductionOrder nextOrder = fabrica.GetNextPriorityOrder(idOp);
             if (nextOrder == null)
@@ -1155,12 +1225,7 @@ class Program
 
         static void DateDemo()
         {
-            fabrica.AdaugaAngajat(new Director("1", "Alex Popescu", 8000, DateTime.Now.AddYears(-5)));
-            fabrica.AdaugaAngajat(new ProductionManager("2", "Maria Ionescu", 5500, DateTime.Now.AddYears(-3)));
-            fabrica.AdaugaAngajat(new Engineer("3", "Ion Vasile", 5000, DateTime.Now.AddYears(-2)));
-            fabrica.AdaugaAngajat(new Technician("4", "Andrei Marin", 4000, DateTime.Now.AddYears(-1)));
-            fabrica.AdaugaAngajat(new MachineOperator("5", "Elena Dumitru", 3500, DateTime.Now.AddMonths(-8)));
-            fabrica.AdaugaAngajat(new SalesAgent("6", "Ioana Radu", 3300, DateTime.Now.AddMonths(-4)));
+         
 
             fabrica.AdaugaAngajat(new Director("DIR001", "Alex Popescu", 8000, DateTime.Now.AddYears(-5)));
             fabrica.AdaugaAngajat(new ProductionManager("PM001", "Maria Ionescu", 5500, DateTime.Now.AddYears(-3)));
@@ -1178,11 +1243,7 @@ class Program
             c1.AdaugaPiesa(new MachinePart("Steel Blade", "Blade"));
             fabrica.AdaugaMasina(c1);
 
-            fabrica.AdaugaProdus(new WoodenCubes("MagicBlocks", 15, 30, 3, "S"));
-            fabrica.AdaugaProdus(new Doll("Barbie", 12, 50, 7, "S"));
-            fabrica.AdaugaProdus(new TedyBear("Barnie", 20, 60, 15, "M"));
-            fabrica.AdaugaProdus(new Ball("Football", 13, 50, 5, "Normal"));
-            fabrica.AdaugaProdus(new Frisbee("OZN", 10, 25, 7, "S"));
+           
         fabrica.InitializeazaMaterialeSiRetete();
 
         

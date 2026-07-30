@@ -1,18 +1,6 @@
-# Smart Factory - Employee Credentials
-# Format: employeeId;username;password;role
-# Default Login Credentials:
-# Director: director / pass123
-# ProductionManager: manager / pass123
-# Engineer: engineer / pass123
-# Technician: tech1 / pass123
-# MachineOperator: operator1 / pass123
-# SalesAgent: sales1 / pass123
- 
-
 DIR001;alex_popescu;pass123;Director
 PM001;maria_ionescu;pass123;ProductionManager
 ENG001;ion_vasile;pass123;Engineer
 TH001;andrei_marin;pass123;Technician
 OP001;elena_dumitru;pass123;MachineOperator
-3;ga;ga;Technician
-32;andrei.turbinca;pass123;Engineer
+32;andrei.turbinca;pass123;Technician

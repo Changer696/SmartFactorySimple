@@ -169,6 +169,7 @@ namespace SmartFactorySimple
         public const string MenuRepairHistoryFooter = "======================";
         public const string MenuPromptChoose = "Choose: ";
         public const string MenuPromptProductionChoice = "Alege: ";
+        public const string MenuUndo = "9. Undo";
         public const string InvalidOption = "Invalid option!";
         public const string FactoryHeader = "\n========== SMART FACTORY ===========";
         public const string MenuEmployeeTypeTitle = "Employee Type:";
@@ -293,7 +294,7 @@ namespace SmartFactorySimple
         public static string SewingProduceMessage(string machineName) => $"{machineName} sews the material .";
         public static string SewingMachineNotStarted(string machineName) => $"{machineName} isn't started!";
         public static string MachinePartStatus(string pieceName, string type, string status) => $"  The piece: {pieceName} | Type: {type} | Status: {status}";
-        public static string ProductDisplay(string description, decimal productionCost, decimal sellingPrice, int quantity) => $"  {description}\n -Production Cost={productionCost} -sellingPrice= {sellingPrice} -RON - Stock: {quantity}";
+        public static string ProductDisplay(string description, decimal productionCost, decimal sellingPrice, int quantity) => $"  {description} | Production Cost: {productionCost} | Selling Price: {sellingPrice} RON | Stock: {quantity}";
         public static string ProductSaleInsufficientStock(int available) => $"Insufficient stock! Available: {available}";
         public static string RoleDuty(string name, string role) => $"{name} ({role})";
         public static string EmployeeRoleMismatch(string name, string role) => $"{name} is not {role}!";

@@ -66,7 +66,6 @@ public abstract class Product
     public abstract string GetDescription();
     public virtual void Afiseaza()
     {
-        Console.WriteLine("  " + GetDescription());
         Console.WriteLine(Messages.ProductDisplay(GetDescription(), ProductionCost, SellingPrice, Cantitate));
     }
 }

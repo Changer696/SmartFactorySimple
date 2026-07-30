@@ -7,7 +7,7 @@ using SmartFactorySimple;
 public class Login
 {
     private readonly string CREDENTIALS_FILE;
-    private readonly Dictionary<string, EmployeeCredential> credentials = [];
+    private readonly Dictionary<string, EmployeeCredential> credentials = new Dictionary<string, EmployeeCredential>();
 
     public class EmployeeCredential
     {
@@ -171,6 +171,50 @@ public class Login
             credentials[username] = credential;
 
             Console.WriteLine(Messages.CredentialsSaved(username, role));
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(Messages.SaveCredentialsError(ex.Message));
+            return false;
+        }
+    }
+
+    public EmployeeCredential FindCredentialByEmployeeId(string employeeId)
+    {
+        return credentials.Values.FirstOrDefault(c => c.EmployeeId == employeeId);
+    }
+
+    public bool RemoveEmployeeCredentialByEmployeeId(string employeeId)
+    {
+        var credential = FindCredentialByEmployeeId(employeeId);
+        if (credential == null)
+            return false;
+
+        credentials.Remove(credential.Username);
+        return SaveAllCredentials();
+    }
+
+    public bool AddEmployeeCredential(EmployeeCredential credential)
+    {
+        if (credential == null)
+            return false;
+
+        if (credentials.ContainsKey(credential.Username))
+            return false;
+
+        string credentialLine = $"{credential.EmployeeId};{credential.Username};{credential.Password};{credential.Role}";
+        File.AppendAllText(CREDENTIALS_FILE, credentialLine + Environment.NewLine);
+        credentials[credential.Username] = credential;
+        return true;
+    }
+
+    private bool SaveAllCredentials()
+    {
+        try
+        {
+            var lines = credentials.Values.Select(c => $"{c.EmployeeId};{c.Username};{c.Password};{c.Role}");
+            File.WriteAllLines(CREDENTIALS_FILE, lines);
             return true;
         }
         catch (Exception ex)
