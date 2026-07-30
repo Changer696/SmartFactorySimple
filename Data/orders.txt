@@ -1,3 +1,7 @@
 # Production Orders
-# Format: Id;MachineSerial;ProductName;Quantity;Priority;Status;CreatedBy;CreatedAt
-ORD1;M001;MagicBlocks;4;High;Created;PM001;2026-07-29T14:55:35
+# Format: Id;MachineSerial;ProductName;Quantity;Produced;Priority;Status;CreatedBy;CreatedAt
+ORD1;M001;MagicBlocks;4;4;High;Completed;PM001;2026-07-29T14:55:35
+ORD2;M002;Barbie;6;5;Medium;InProgress;PM001;2026-07-30T09:10:00
+ORD3;M001;Barnie;3;1;Low;InProgress;PM001;2026-07-30T10:25:00
+ORD4;M002;Football;5;0;High;Created;PM001;2026-07-30T11:45:00
+ORD5;M001;OZN;8;8;Medium;Completed;PM001;2026-07-30T12:30:00

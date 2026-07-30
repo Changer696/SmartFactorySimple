@@ -27,14 +27,28 @@ public class ProductionOrder : IIdentifiable
         DataCrearii = DateTime.Now;
     }
 
-    public void InregistreazaProductie(int unitati)
+    public int InregistreazaProductie(int unitati)
     {
+        if (unitati <= 0)
+        {
+            Console.WriteLine(Messages.ProductionQuantityMustBePositive);
+            return 0;
+        }
+
         if (Status == ProductionOrderStatus.Completed)
         {
             Console.WriteLine(Messages.OrderAlreadyCompleted);
-            return;
+            return 0;
         }
-        CantitateProdusa = CantitateProdusa + unitati;
+
+        int remaining = CantitateTarget - CantitateProdusa;
+        int actualProduced = Math.Min(unitati, remaining);
+        if (actualProduced < unitati)
+        {
+            Console.WriteLine(Messages.ProductionQuantityCapped(remaining));
+        }
+
+        CantitateProdusa += actualProduced;
 
         if (CantitateProdusa >= CantitateTarget)
         {
@@ -42,21 +56,23 @@ public class ProductionOrder : IIdentifiable
             Status = ProductionOrderStatus.Completed;
             Console.WriteLine(Messages.OrderCompleted(Id));
             if (CreatDe != null)
-                Logging.Log(CreatDe.Id, $"Produced {unitati} units for order {Id} ({NumeProdus}) - completed");
+                Logging.Log(CreatDe.Id, $"Produced {actualProduced} units for order {Id} ({NumeProdus}) - completed");
         }
         else
         {
             Status = ProductionOrderStatus.InProgress;
             Console.WriteLine(Messages.OrderProgress(Id, CantitateProdusa, CantitateTarget));
             if (CreatDe != null)
-                Logging.Log(CreatDe.Id, $"Produced {unitati} units for order {Id} ({NumeProdus})");
+                Logging.Log(CreatDe.Id, $"Produced {actualProduced} units for order {Id} ({NumeProdus})");
         }
+
+        return actualProduced;
     }
     public void Afiseaza()
     {
         Console.WriteLine("[" + Id + "] " + NumeProdus +
                           " x" + CantitateTarget +
-                          " | Product: " + CantitateProdusa +
+                          " | Produced: " + CantitateProdusa + "/" + CantitateTarget +
                           " | Status: " + Status +
                           " | Priority: " + Prioritate +
                           " | Manager: " + CreatDe.Nume +

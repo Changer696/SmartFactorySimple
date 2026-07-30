@@ -7,6 +7,43 @@ namespace SmartFactorySimple.Tests;
 public class FactoryShareTests
 {
     [Fact]
+    public void ExecutingMoreThanTheRemainingOrderQuantityDoesNotProduceAnything()
+    {
+        string ordersPath = AppFileNames.ResolvePath(AppFileNames.OrdersFileName);
+        string backupPath = ordersPath + ".bak";
+        File.Copy(ordersPath, backupPath, overwrite: true);
+
+        try
+        {
+            var factory = new Factory("Test Factory");
+            factory.AdaugaAngajat(new ProductionManager("PM001", "Maria Ionescu", 5500m, DateTime.Now.AddYears(-3)));
+            factory.AdaugaAngajat(new MachineOperator("OP001", "Alex Popescu", 4500m, DateTime.Now.AddYears(-2)));
+
+            var machine = new SewingMachine("M001", "Test Machine", DateTime.Now.AddYears(-2))
+            {
+                Status = MachineStatus.Running
+            };
+            factory.AdaugaMasina(machine);
+
+            var product = new WoodenCubes("OverproductionTestProduct", 15m, 30m, 2, "S");
+            factory.AdaugaProdus(product);
+            factory.CreazaComanda("PM001", "M001", product.Nume, 3, Priority.High);
+
+            factory.ExecutaComanda("OP001", "ORD1", 5);
+
+            ProductionOrder order = factory.GetOrderById("ORD1");
+            Assert.Equal(0, order.CantitateProdusa);
+            Assert.Equal(ProductionOrderStatus.Created, order.Status);
+            Assert.Equal(2, product.Cantitate);
+        }
+        finally
+        {
+            File.Copy(backupPath, ordersPath, overwrite: true);
+            File.Delete(backupPath);
+        }
+    }
+
+    [Fact]
     public void ListingCompanyCreatesPublicShareStateAndAppliesMenuFluctuation()
     {
         var factory = new Factory("Test Factory");

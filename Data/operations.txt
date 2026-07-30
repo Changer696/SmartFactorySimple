@@ -642,3 +642,251 @@
 2026-07-29 15:10:12 | andrei.turbinca | Successful login
 2026-07-29 15:10:36 | andrei.turbinca | User logged out
 2026-07-29 15:10:41 | tech1 | Successful login
+2026-07-30 09:05:05 | operator1 | Successful login
+2026-07-30 09:05:05 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:05:05 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:05:05 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:05:05 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:05:05 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:05:05 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:07:30 | operator1 | Successful login
+2026-07-30 09:07:30 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:07:30 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:07:30 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:07:30 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:07:30 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:07:30 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:08:55 | operator1 | Successful login
+2026-07-30 09:08:55 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:08:55 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:08:55 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:08:55 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:08:55 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:08:55 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:09:14 | operator1 | Successful login
+2026-07-30 09:09:14 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:09:14 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:09:14 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:09:14 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:09:14 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:09:14 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:11:31 | alex_popescu | Successful login
+2026-07-30 09:11:31 | 1 | Employee added: Alex Popescu
+2026-07-30 09:11:31 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:11:31 | 3 | Employee added: Ion Vasile
+2026-07-30 09:11:31 | 4 | Employee added: Andrei Marin
+2026-07-30 09:11:31 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:11:31 | 6 | Employee added: Ioana Radu
+2026-07-30 09:11:31 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:11:31 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:11:31 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:11:31 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:11:31 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:11:31 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:16:53 | operator1 | Successful login
+2026-07-30 09:16:53 | 1 | Employee added: Alex Popescu
+2026-07-30 09:16:53 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:16:53 | 3 | Employee added: Ion Vasile
+2026-07-30 09:16:53 | 4 | Employee added: Andrei Marin
+2026-07-30 09:16:53 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:16:53 | 6 | Employee added: Ioana Radu
+2026-07-30 09:18:19 | operator1 | Successful login
+2026-07-30 09:18:19 | 1 | Employee added: Alex Popescu
+2026-07-30 09:18:19 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:18:19 | 3 | Employee added: Ion Vasile
+2026-07-30 09:18:19 | 4 | Employee added: Andrei Marin
+2026-07-30 09:18:19 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:18:19 | 6 | Employee added: Ioana Radu
+2026-07-30 09:18:19 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:18:19 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:18:19 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:18:19 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:18:19 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:18:19 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:19:01 | PM001 | Produced 4 units for order ORD1 (MagicBlocks) - completed
+2026-07-30 09:19:01 | 5 | Produced 4 units for order ORD1 (MagicBlocks)
+2026-07-30 09:22:29 | operatro1 | Failed login attempt
+2026-07-30 09:22:34 | operator1 | Successful login
+2026-07-30 09:22:34 | 1 | Employee added: Alex Popescu
+2026-07-30 09:22:34 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:22:34 | 3 | Employee added: Ion Vasile
+2026-07-30 09:22:34 | 4 | Employee added: Andrei Marin
+2026-07-30 09:22:34 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:22:34 | 6 | Employee added: Ioana Radu
+2026-07-30 09:22:34 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:22:34 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:22:34 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:22:34 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:22:34 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:22:34 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:23:43 | operator1 | Successful login
+2026-07-30 09:23:43 | 1 | Employee added: Alex Popescu
+2026-07-30 09:23:43 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:23:43 | 3 | Employee added: Ion Vasile
+2026-07-30 09:23:43 | 4 | Employee added: Andrei Marin
+2026-07-30 09:23:43 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:23:43 | 6 | Employee added: Ioana Radu
+2026-07-30 09:23:43 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:23:43 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:23:43 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:23:43 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:23:43 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:23:43 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:26:04 | PM001 | Produced 2 units for order ORD3 (Barnie)
+2026-07-30 09:26:04 | 5 | Produced 2 units for order ORD3 (Barnie)
+2026-07-30 09:26:47 | operator1 | Successful login
+2026-07-30 09:26:47 | 1 | Employee added: Alex Popescu
+2026-07-30 09:26:47 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:26:47 | 3 | Employee added: Ion Vasile
+2026-07-30 09:26:47 | 4 | Employee added: Andrei Marin
+2026-07-30 09:26:47 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:26:47 | 6 | Employee added: Ioana Radu
+2026-07-30 09:26:47 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:26:47 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:26:47 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:26:47 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:26:47 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:26:47 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:30:05 | PM001 | Produced 5 units for order ORD5 (OZN)
+2026-07-30 09:30:05 | 5 | Produced 5 units for order ORD5 (OZN)
+2026-07-30 09:33:35 | operator1 | Successful login
+2026-07-30 09:33:35 | 1 | Employee added: Alex Popescu
+2026-07-30 09:33:35 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:33:35 | 3 | Employee added: Ion Vasile
+2026-07-30 09:33:35 | 4 | Employee added: Andrei Marin
+2026-07-30 09:33:35 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:33:35 | 6 | Employee added: Ioana Radu
+2026-07-30 09:33:35 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:33:35 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:33:35 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:33:35 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:33:35 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:33:35 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:33:49 | PM001 | Produced 5 units for order ORD5 (OZN)
+2026-07-30 09:33:49 | 5 | Produced 5 units for order ORD5 (OZN)
+2026-07-30 09:34:03 | PM001 | Produced 6 units for order ORD5 (OZN) - completed
+2026-07-30 09:34:03 | 5 | Produced 6 units for order ORD5 (OZN)
+2026-07-30 09:37:03 | operator1 | Successful login
+2026-07-30 09:37:03 | 1 | Employee added: Alex Popescu
+2026-07-30 09:37:03 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:37:03 | 3 | Employee added: Ion Vasile
+2026-07-30 09:37:03 | 4 | Employee added: Andrei Marin
+2026-07-30 09:37:03 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:37:03 | 6 | Employee added: Ioana Radu
+2026-07-30 09:37:03 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:37:03 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:37:03 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:37:03 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:37:03 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:37:03 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:37:21 | 5 | Produced 9 units for order ORD5 (OZN)
+2026-07-30 09:43:25 | operatro1 | Failed login attempt
+2026-07-30 09:43:32 | operator1 | Successful login
+2026-07-30 09:43:32 | 1 | Employee added: Alex Popescu
+2026-07-30 09:43:32 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:43:32 | 3 | Employee added: Ion Vasile
+2026-07-30 09:43:32 | 4 | Employee added: Andrei Marin
+2026-07-30 09:43:32 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:43:32 | 6 | Employee added: Ioana Radu
+2026-07-30 09:43:32 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:43:32 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:43:32 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:43:32 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:43:32 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:43:32 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:43:56 | PM001 | Produced 2 units for order ORD1 (MagicBlocks)
+2026-07-30 09:43:56 | 5 | Produced 2 units for order ORD1 (MagicBlocks)
+2026-07-30 09:44:05 | PM001 | Produced 2 units for order ORD1 (MagicBlocks) - completed
+2026-07-30 09:44:05 | 5 | Produced 2 units for order ORD1 (MagicBlocks)
+2026-07-30 09:47:25 | operator1 | Successful login
+2026-07-30 09:47:25 | 1 | Employee added: Alex Popescu
+2026-07-30 09:47:25 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:47:25 | 3 | Employee added: Ion Vasile
+2026-07-30 09:47:25 | 4 | Employee added: Andrei Marin
+2026-07-30 09:47:25 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:47:25 | 6 | Employee added: Ioana Radu
+2026-07-30 09:47:25 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:47:25 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:47:25 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:47:25 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:47:25 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:47:25 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:49:51 | operator1 | Successful login
+2026-07-30 09:49:51 | 1 | Employee added: Alex Popescu
+2026-07-30 09:49:51 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:49:51 | 3 | Employee added: Ion Vasile
+2026-07-30 09:49:51 | 4 | Employee added: Andrei Marin
+2026-07-30 09:49:51 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:49:51 | 6 | Employee added: Ioana Radu
+2026-07-30 09:49:51 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:49:51 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:49:51 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:49:51 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:49:51 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:49:51 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:52:21 | operator1 | Successful login
+2026-07-30 09:52:21 | 1 | Employee added: Alex Popescu
+2026-07-30 09:52:21 | 2 | Employee added: Maria Ionescu
+2026-07-30 09:52:21 | 3 | Employee added: Ion Vasile
+2026-07-30 09:52:21 | 4 | Employee added: Andrei Marin
+2026-07-30 09:52:21 | 5 | Employee added: Elena Dumitru
+2026-07-30 09:52:21 | 6 | Employee added: Ioana Radu
+2026-07-30 09:52:21 | DIR001 | Employee added: Alex Popescu
+2026-07-30 09:52:21 | PM001 | Employee added: Maria Ionescu
+2026-07-30 09:52:21 | ENG001 | Employee added: Ion Vasile
+2026-07-30 09:52:21 | TH001 | Employee added: Andrei Marin
+2026-07-30 09:52:21 | OP001 | Employee added: Elena Dumitru
+2026-07-30 09:52:21 | SA001 | Employee added: Ioana Radu
+2026-07-30 09:52:44 | PM001 | Produced 4 units for order ORD1 (MagicBlocks) - completed
+2026-07-30 09:52:44 | 5 | Produced 4 units for order ORD1 (MagicBlocks)
+2026-07-30 10:04:44 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:04:44 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:04:44 | PM001 | Order created: ORD1 (MagicBlocks) qty=4 priority=High
+2026-07-30 10:04:44 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:04:44 | OP001 | Employee added: Alex Popescu
+2026-07-30 10:04:44 | PM001 | Order created: ORD1 (OverproductionTestProduct) qty=3 priority=High
+2026-07-30 10:05:48 | operatro1 | Failed login attempt
+2026-07-30 10:05:51 | unknown | Failed login attempt
+2026-07-30 10:05:57 | operator1 | Successful login
+2026-07-30 10:05:57 | 1 | Employee added: Alex Popescu
+2026-07-30 10:05:57 | 2 | Employee added: Maria Ionescu
+2026-07-30 10:05:57 | 3 | Employee added: Ion Vasile
+2026-07-30 10:05:57 | 4 | Employee added: Andrei Marin
+2026-07-30 10:05:57 | 5 | Employee added: Elena Dumitru
+2026-07-30 10:05:57 | 6 | Employee added: Ioana Radu
+2026-07-30 10:05:57 | DIR001 | Employee added: Alex Popescu
+2026-07-30 10:05:57 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:05:57 | ENG001 | Employee added: Ion Vasile
+2026-07-30 10:05:57 | TH001 | Employee added: Andrei Marin
+2026-07-30 10:05:57 | OP001 | Employee added: Elena Dumitru
+2026-07-30 10:05:57 | SA001 | Employee added: Ioana Radu
+2026-07-30 10:06:25 | operator1 | Successful login
+2026-07-30 10:06:25 | 1 | Employee added: Alex Popescu
+2026-07-30 10:06:25 | 2 | Employee added: Maria Ionescu
+2026-07-30 10:06:25 | 3 | Employee added: Ion Vasile
+2026-07-30 10:06:25 | 4 | Employee added: Andrei Marin
+2026-07-30 10:06:25 | 5 | Employee added: Elena Dumitru
+2026-07-30 10:06:25 | 6 | Employee added: Ioana Radu
+2026-07-30 10:06:25 | DIR001 | Employee added: Alex Popescu
+2026-07-30 10:06:25 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:06:25 | ENG001 | Employee added: Ion Vasile
+2026-07-30 10:06:25 | TH001 | Employee added: Andrei Marin
+2026-07-30 10:06:25 | OP001 | Employee added: Elena Dumitru
+2026-07-30 10:06:25 | SA001 | Employee added: Ioana Radu
+2026-07-30 10:06:43 | operatro1 | Failed login attempt
+2026-07-30 10:06:43 | unknown | Failed login attempt
+2026-07-30 10:06:48 | operator1 | Successful login
+2026-07-30 10:06:48 | 1 | Employee added: Alex Popescu
+2026-07-30 10:06:48 | 2 | Employee added: Maria Ionescu
+2026-07-30 10:06:48 | 3 | Employee added: Ion Vasile
+2026-07-30 10:06:48 | 4 | Employee added: Andrei Marin
+2026-07-30 10:06:48 | 5 | Employee added: Elena Dumitru
+2026-07-30 10:06:48 | 6 | Employee added: Ioana Radu
+2026-07-30 10:06:48 | DIR001 | Employee added: Alex Popescu
+2026-07-30 10:06:48 | PM001 | Employee added: Maria Ionescu
+2026-07-30 10:06:48 | ENG001 | Employee added: Ion Vasile
+2026-07-30 10:06:48 | TH001 | Employee added: Andrei Marin
+2026-07-30 10:06:48 | OP001 | Employee added: Elena Dumitru
+2026-07-30 10:06:48 | SA001 | Employee added: Ioana Radu
+2026-07-30 10:07:19 | PM001 | Produced 5 units for order ORD2 (Barbie)
+2026-07-30 10:07:19 | 5 | Produced 5 units for order ORD2 (Barbie)

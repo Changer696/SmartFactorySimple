@@ -29,6 +29,9 @@ namespace SmartFactorySimple
         public const string EmployeeAddedSuccessfully = "Employee added successfully!";
         public const string EmployeeAddedCredentialsFailed = "Employee added but failed to save credentials!";
         public const string ProductQuantityNegative = "The quantity can't be negative!";
+        public const string ProductionQuantityMustBePositive = "The production quantity must be greater than zero.";
+        public static string ProductionQuantityExceedsRemaining(int remaining) => $"You can produce at most {remaining} more unit(s) for this order. Enter the amount again.";
+        public static string ProductionQuantityCapped(int remaining) => $"Production amount capped to {remaining} remaining unit(s) for this order.";
         public const string InsufficientStock = "Insufficient stock!";
         public const string OrderAlreadyCompleted = "The order is already completed!";
         public const string ProductNotFound = "Product doesn't exist!";
@@ -266,6 +269,7 @@ namespace SmartFactorySimple
         public static string SalesMessage(string name, int quantity, string productName) => $"{name} sold {quantity}x {productName}";
         public static string OrderProgress(string orderId, int produced, int target) => $"Progres {orderId}: {produced}/{target}";
         public static string OrderCompleted(string orderId) => $"Order {orderId} COMPLETED!";
+        public static string OrderExecuted(string orderId, int units) => $"Order executed: {orderId} ({units} units)";
         public static string SaleRecorded(string productName, int quantity, decimal amount) => $"Sale recorded: {quantity}x {productName} = {amount} RON";
         public static string OrderLineWarning(string line) => $"Warning: invalid order line: {line}";
         public static string SkippingOrder(string id) => $"Skipping order {id}: missing machine or manager";

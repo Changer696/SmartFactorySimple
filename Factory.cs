@@ -62,7 +62,7 @@ public class Factory
     }
 
     // Load orders from orders.txt. Expects lines in the format:
-    // Id;MachineSerial;ProductName;Quantity;Priority;Status;CreatedBy;CreatedAt
+    // Id;MachineSerial;ProductName;Quantity;Produced;Priority;Status;CreatedBy;CreatedAt
     public void LoadOrdersFromFile()
     {
         try
@@ -91,15 +91,33 @@ public class Factory
                 if (!int.TryParse(parts[3].Trim(), out int qty))
                     qty = 0;
 
-                if (!Enum.TryParse(parts[4].Trim(), true, out Priority prioritate))
+                int produced = 0;
+                int priorityIndex = 4;
+                if (parts.Length >= 9 && int.TryParse(parts[4].Trim(), out int parsedProduced))
+                {
+                    produced = parsedProduced;
+                    priorityIndex = 5;
+                }
+
+                if (!Enum.TryParse(parts[priorityIndex].Trim(), true, out Priority prioritate))
                     prioritate = Priority.Medium;
 
-                if (!Enum.TryParse(parts[5].Trim(), true, out ProductionOrderStatus status))
+                if (!Enum.TryParse(parts[priorityIndex + 1].Trim(), true, out ProductionOrderStatus status))
                     status = ProductionOrderStatus.Created;
 
-                string createdBy = parts[6].Trim();
+                string createdBy = parts[priorityIndex + 2].Trim();
                 DateTime createdAt = DateTime.Now;
-                DateTime.TryParse(parts[7].Trim(), out createdAt);
+                DateTime.TryParse(parts[priorityIndex + 3].Trim(), out createdAt);
+
+                if (status == ProductionOrderStatus.Completed && produced == 0)
+                {
+                    produced = qty;
+                }
+
+                if (produced > qty)
+                {
+                    produced = qty;
+                }
 
                 Machine masina = GasesteMasina(machineSerial);
                 Employee emp = GasesteAngajat(createdBy);
@@ -119,6 +137,7 @@ public class Factory
                     existing.Masina = masina;
                     existing.NumeProdus = productName;
                     existing.CantitateTarget = qty;
+                    existing.CantitateProdusa = produced;
                     existing.Prioritate = prioritate;
                     existing.Status = status;
                     existing.DataCrearii = createdAt;
@@ -127,7 +146,7 @@ public class Factory
                 {
                     var order = new ProductionOrder(id, masina, manager, productName, qty, prioritate);
                     order.Status = status;
-                    order.CantitateProdusa = 0; // we don't persist produced amount in file currently
+                    order.CantitateProdusa = produced;
                     order.DataCrearii = createdAt;
 
                     _orderRepository.Add(order);
@@ -163,12 +182,12 @@ public class Factory
             var orders = _orderRepository.GetAll();
             List<string> lines = new List<string>();
             lines.Add("# Production Orders");
-            lines.Add("# Format: Id;MachineSerial;ProductName;Quantity;Priority;Status;CreatedBy;CreatedAt");
+            lines.Add("# Format: Id;MachineSerial;ProductName;Quantity;Produced;Priority;Status;CreatedBy;CreatedAt");
             foreach (var o in orders)
             {
                 string createdBy = o.CreatDe != null ? o.CreatDe.Id : "";
                 string createdAt = o.DataCrearii.ToString("s");
-                string line = string.Join(";", o.Id, o.Masina?.SerialNumber ?? "", o.NumeProdus, o.CantitateTarget.ToString(), o.Prioritate.ToString(), o.Status.ToString(), createdBy, createdAt);
+                string line = string.Join(";", o.Id, o.Masina?.SerialNumber ?? "", o.NumeProdus, o.CantitateTarget.ToString(), o.CantitateProdusa.ToString(), o.Prioritate.ToString(), o.Status.ToString(), createdBy, createdAt);
                 lines.Add(line);
             }
 
@@ -350,6 +369,31 @@ public class Factory
 
         if (comanda == null) { Console.WriteLine(Messages.OrderDoesNotExist); return; }
 
+        if (unitati <= 0)
+        {
+            Console.WriteLine(Messages.ProductionQuantityMustBePositive);
+            return;
+        }
+
+        int remaining = comanda.CantitateTarget - comanda.CantitateProdusa;
+        if (remaining <= 0)
+        {
+            Console.WriteLine(Messages.OrderAlreadyCompleted);
+            return;
+        }
+
+        if (unitati > remaining)
+        {
+            Console.WriteLine(Messages.ProductionQuantityExceedsRemaining(remaining));
+            return;
+        }
+
+        if (comanda.Status == ProductionOrderStatus.Completed)
+        {
+            Console.WriteLine(Messages.OrderAlreadyCompleted);
+            return;
+        }
+
         // --- INCEPUT LOGICĂ REȚETĂ ȘI MATERIALE ---
         string numeProdus = comanda.NumeProdus;
 
@@ -390,19 +434,34 @@ public class Factory
 
         if (comanda.Masina.Status == MachineStatus.Running)
         {
-            comanda.InregistreazaProductie(unitati);
+            int unitatiProduse = comanda.InregistreazaProductie(unitati);
+
+            if (unitatiProduse == 0)
+                return;
 
             Product produs = GasesteProdus(comanda.NumeProdus);
             if (produs != null)
             {
-                produs.AdaugaStoc(unitati);
-                Console.WriteLine(Messages.NewStockAdded(comanda.NumeProdus, unitati));
+                produs.AdaugaStoc(unitatiProduse);
+                Console.WriteLine(Messages.NewStockAdded(comanda.NumeProdus, unitatiProduse));
             }
 
-            Logging.Log(idOperator, $"Produced {unitati} units for order {idComanda} ({comanda.NumeProdus})");
+            Logging.Log(idOperator, $"Produced {unitatiProduse} units for order {idComanda} ({comanda.NumeProdus})");
+            
+            comanda.Afiseaza();
+            SaveOrdersToFile();
+            
+
+
+
         }
     }
-
+    static void PauseAndContinue()
+    {
+        Console.WriteLine();
+        Console.WriteLine("Press Enter to continue...");
+        Console.ReadLine();
+    }
     public void ReparaMasina(string idTehnician, string idEngineer, string serial)
     {
         Employee a1 = GasesteAngajat(idTehnician);

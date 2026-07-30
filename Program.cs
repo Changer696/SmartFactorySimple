@@ -185,6 +185,7 @@ class Program
                 break;
             case "5":
                 fabrica.AfiseazaDashboardGestionare();
+                PauseAndContinue();
                 break;
             case "6": ShowOperationLogs(); PauseAndContinue(); break;
             case "7":
@@ -249,6 +250,7 @@ class Program
             case "4": MeniuProductieManager(); break;
             case "5":
                 fabrica.AfiseazaDashboardGestionare();
+                PauseAndContinue();
                 break;
             case "6": fabrica.AfiseazaRaportGeneral(); PauseAndContinue(); break;
             case "7": return Logout();
@@ -436,7 +438,8 @@ class Program
             ExecutaComanda();
         else if (alegere == "2")
             ExecutaComanaPrioritara();
-    
+
+        PauseAndContinue();
     }
 
     static bool MeniuSalesAgent()
@@ -552,6 +555,7 @@ class Program
         else if (alegere == "2")
         {
             fabrica.AfiseazaAngajati();
+            PauseAndContinue();
         }
         else if (alegere == "3")
         {
@@ -559,6 +563,7 @@ class Program
             Console.Write(Messages.PromptEmployeeIdDelete);
             string id = Console.ReadLine();
             fabrica.StergeAngajat(id);
+            PauseAndContinue();
         }
         else if (alegere == "4")
         {
@@ -570,6 +575,7 @@ class Program
                 Console.WriteLine(Messages.EmployeeDoesNotExist);
             else
                 ang.PerformDuty();
+            PauseAndContinue();
         }
     }
 
@@ -718,6 +724,7 @@ class Program
         else if (alegere == "2")
         {
             fabrica.AfiseazaMasini();
+            PauseAndContinue();
         }
         else if (alegere == "3")
         {
@@ -729,6 +736,7 @@ class Program
                 Console.WriteLine("Machine doesn't exist!");
             else
                 m.Stop();
+            PauseAndContinue();
         }
         else if (alegere == "4")
         {
@@ -744,18 +752,22 @@ class Program
                 Console.WriteLine("Machine doesn't exist!");
             else
                 m.Start();
+            PauseAndContinue();
         }
         else if (alegere == "6")
         {
             fabrica.AfiseazaMentenantaPredictiva();
+            PauseAndContinue();
         }
         else if (alegere == "7")
         {
             fabrica.AfiseazaDashboardEficienta();
+            PauseAndContinue();
         }
         else if (alegere == "8")
         {
             fabrica.AfiseazaStareMasini();
+            PauseAndContinue();
         }
     }
 
@@ -850,9 +862,15 @@ class Program
         else if (alegere == "4")
             VandeProdus();
         else if (alegere == "5")
+        {
             fabrica.AfiseazaDashboardEficienta();
+            PauseAndContinue();
+        }
         else if (alegere == "6")
+        {
             fabrica.AfiseazaAlerteInventar();
+            PauseAndContinue();
+        }
     }
 
     static void AdaugaStocProdus()
@@ -1017,8 +1035,20 @@ class Program
             Console.Write(Messages.PromptOrderId);
             string idComanda = Console.ReadLine();
 
-            Console.Write(Messages.PromptUnitsToProduce);
-            int unitati = int.Parse(Console.ReadLine());
+            ProductionOrder order = fabrica.GetOrderById(idComanda);
+            if (order == null)
+            {
+                fabrica.ExecutaComanda(idOp, idComanda, 1);
+                return;
+            }
+
+            if (order.Status == ProductionOrderStatus.Completed)
+            {
+                Console.WriteLine(Messages.OrderAlreadyCompleted);
+                return;
+            }
+
+            int unitati = CitesteCantitateProductieValida(order);
 
             fabrica.ExecutaComanda(idOp, idComanda, unitati);
         }
@@ -1039,10 +1069,32 @@ class Program
             Console.WriteLine(Messages.ProductionOrderHeader);
             nextOrder.Afiseaza();
 
-            Console.Write(Messages.PromptUnitsToProduce);
-            int unitati = int.Parse(Console.ReadLine());
+            int unitati = CitesteCantitateProductieValida(nextOrder);
 
             fabrica.ExecutaComanda(idOp, nextOrder.Id, unitati);
+        }
+
+        static int CitesteCantitateProductieValida(ProductionOrder order)
+        {
+            int remaining = order.CantitateTarget - order.CantitateProdusa;
+
+            while (true)
+            {
+                Console.Write(Messages.PromptUnitsToProduce);
+                if (!int.TryParse(Console.ReadLine(), out int unitati) || unitati <= 0)
+                {
+                    Console.WriteLine(Messages.ProductionQuantityMustBePositive);
+                    continue;
+                }
+
+                if (unitati > remaining)
+                {
+                    Console.WriteLine(Messages.ProductionQuantityExceedsRemaining(remaining));
+                    continue;
+                }
+
+                return unitati;
+            }
         }
 
         static void MeniuVanzari()
@@ -1103,6 +1155,13 @@ class Program
 
         static void DateDemo()
         {
+            fabrica.AdaugaAngajat(new Director("1", "Alex Popescu", 8000, DateTime.Now.AddYears(-5)));
+            fabrica.AdaugaAngajat(new ProductionManager("2", "Maria Ionescu", 5500, DateTime.Now.AddYears(-3)));
+            fabrica.AdaugaAngajat(new Engineer("3", "Ion Vasile", 5000, DateTime.Now.AddYears(-2)));
+            fabrica.AdaugaAngajat(new Technician("4", "Andrei Marin", 4000, DateTime.Now.AddYears(-1)));
+            fabrica.AdaugaAngajat(new MachineOperator("5", "Elena Dumitru", 3500, DateTime.Now.AddMonths(-8)));
+            fabrica.AdaugaAngajat(new SalesAgent("6", "Ioana Radu", 3300, DateTime.Now.AddMonths(-4)));
+
             fabrica.AdaugaAngajat(new Director("DIR001", "Alex Popescu", 8000, DateTime.Now.AddYears(-5)));
             fabrica.AdaugaAngajat(new ProductionManager("PM001", "Maria Ionescu", 5500, DateTime.Now.AddYears(-3)));
             fabrica.AdaugaAngajat(new Engineer("ENG001", "Ion Vasile", 5000, DateTime.Now.AddYears(-2)));

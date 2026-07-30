@@ -8,12 +8,7 @@
 # MachineOperator: operator1 / pass123
 # SalesAgent: sales1 / pass123
  
-1;director;pass123;Director
-2;manager;pass123;ProductionManager
-3;engineer;pass123;Engineer
-4;tech1;pass123;Technician
-5;operator1;pass123;MachineOperator
-6;sales1;pass123;SalesAgent
+
 DIR001;alex_popescu;pass123;Director
 PM001;maria_ionescu;pass123;ProductionManager
 ENG001;ion_vasile;pass123;Engineer

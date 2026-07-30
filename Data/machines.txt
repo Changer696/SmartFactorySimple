@@ -1,2 +1,2 @@
-SewingMachine;3;da;Stopped;Excellent;2026-07-17 09:52:26;0;2026-07-17 10:35:07;nana,1,True,2026-07-17 09:52:33
-CuttingMachine;M001;gfa;Stopped;Good;2026-07-17 11:06:13;0;;
+SewingMachine;M001;Juki Sewing;Stopped;Excellent;2026-07-17 09:52:26;0;2026-07-17 10:35:07;Industrial Needle,Needle,True,2026-07-17 09:52:33~Polyester Thread,Thread,True,2026-07-17 09:52:33
+CuttingMachine;M002;Auto Cutter;Stopped;Good;2026-07-17 11:06:13;0;;Steel Blade,Blade,True,2026-07-17 11:00:00
